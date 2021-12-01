@@ -1,4 +1,4 @@
-package com.example.loser;
+package com.loser;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

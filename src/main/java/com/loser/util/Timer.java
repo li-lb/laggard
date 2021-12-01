@@ -1,4 +1,4 @@
-package com.example.loser.util;
+package com.loser.util;
 
 import java.util.Date;
 import java.util.TimerTask;

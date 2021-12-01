@@ -1,4 +1,4 @@
-package com.example.loser;
+package com.loser;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
