@@ -1,4 +1,4 @@
-package com.loser.util;
+package com.lilb.loser.util;
 
 import java.util.Date;
 import java.util.TimerTask;

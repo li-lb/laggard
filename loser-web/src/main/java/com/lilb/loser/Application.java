@@ -1,0 +1,19 @@
+package com.lilb.loser;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+/**
+ * 应用程序
+ *
+ * @author li-lb
+ * @date 2021/12/27
+ */
+@SpringBootApplication
+public class Application {
+
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
+
+}
