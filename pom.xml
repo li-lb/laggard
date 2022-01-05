@@ -5,14 +5,15 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>loser-provider</module>
+        <module>loser-consumer</module>
         <module>loser-common</module>
-        <module>loser-payment</module>
     </modules>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.7.RELEASE</version>
+        <version>2.3.12.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -26,8 +27,9 @@
         <java.version>11</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <spring-boot.version>2.3.7.RELEASE</spring-boot.version>
-        <spring-cloud-alibaba.version>2.2.2.RELEASE</spring-cloud-alibaba.version>
+        <spring-boot.version>2.3.12.RELEASE</spring-boot.version>
+        <spring-cloud-alibaba.version>2.2.7.RELEASE</spring-cloud-alibaba.version>
+        <skipTests>true</skipTests>
     </properties>
 
     <dependencyManagement>
@@ -46,6 +48,18 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-openfeign</artifactId>
+                <version>3.1.0</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-loadbalancer -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+                <version>3.1.0</version>
+            </dependency>
+
             <!--mysql驱动包-->
             <dependency>
                 <groupId>mysql</groupId>
@@ -53,29 +67,16 @@
                 <version>8.0.27</version>
                 <scope>runtime</scope>
             </dependency>
-            <!--hutool工具包-->
             <dependency>
-                <groupId>cn.hutool</groupId>
-                <artifactId>hutool-all</artifactId>
-                <version>5.7.15</version>
+                <groupId>com.github.atool</groupId>
+                <artifactId>fluent-mybatis</artifactId>
+                <version>1.9.4</version>
             </dependency>
-            <!--guava工具包-->
             <dependency>
-                <groupId>com.google.guava</groupId>
-                <artifactId>guava</artifactId>
-                <version>31.0.1-jre</version>
-            </dependency>
-            <!--http库-->
-            <dependency>
-                <groupId>com.squareup.okhttp3</groupId>
-                <artifactId>okhttp</artifactId>
-                <version>4.9.2</version>
-            </dependency>
-            <!--fastjson包-->
-            <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>fastjson</artifactId>
-                <version>1.2.78</version>
+                <groupId>com.github.atool</groupId>
+                <artifactId>fluent-mybatis-processor</artifactId>
+                <scope>provided</scope>
+                <version>1.9.4</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

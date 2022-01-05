@@ -1,0 +1,23 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: loser-provider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 39.107.235.107:8848 #配置Nacos地址
+  datasource:
+    url: jdbc:mysql://39.107.235.107:3306/loser?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: Li081206!
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+
