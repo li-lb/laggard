@@ -8,6 +8,7 @@
         <module>loser-provider</module>
         <module>loser-consumer</module>
         <module>loser-common</module>
+        <module>loser-dataProcess</module>
     </modules>
 
     <parent>
