@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>loser-dataProcess</artifactId>
+    <artifactId>loser-data-process</artifactId>
 
     <dependencies>
         <dependency>
