@@ -1,6 +1,6 @@
 server:
   port: 80
-# 数据库相关的信息配置 TODO
+
 spring:
   application:
     name: loser-consumer
