@@ -1,71 +1,47 @@
-package com.lilb.loser.configure;
+package com.lilb.loser.config;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.serializer.SerializerFeature;
-import com.fasterxml.jackson.databind.JavaType;
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.type.TypeFactory;
-import org.springframework.data.redis.serializer.RedisSerializer;
-import org.springframework.data.redis.serializer.SerializationException;
-import com.alibaba.fastjson.parser.ParserConfig;
-import org.springframework.util.Assert;
-import java.nio.charset.Charset;
+import com.fasterxml.jackson.databind.jsontype.impl.LaissezFaireSubTypeValidator;
+import org.springframework.cache.annotation.CachingConfigurerSupport;
+import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.redis.connection.RedisConnectionFactory;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 /**
- * Redis使用FastJson序列化
- * 
+ * redis配置
+ *
  * @author ruoyi
  */
-public class FastJson2JsonRedisSerializer<T> implements RedisSerializer<T>
-{
-    @SuppressWarnings("unused")
-    private ObjectMapper objectMapper = new ObjectMapper();
+@Configuration
+@EnableCaching
+public class RedisConfig extends CachingConfigurerSupport {
+    @Bean
+    public RedisTemplate<Object, Object> redisTemplate(RedisConnectionFactory connectionFactory) {
+        RedisTemplate<Object, Object> template = new RedisTemplate<>();
+        template.setConnectionFactory(connectionFactory);
 
-    public static final Charset DEFAULT_CHARSET = Charset.forName("UTF-8");
+        com.lilb.loser.config.FastJson2JsonRedisSerializer serializer = new com.lilb.loser.config.FastJson2JsonRedisSerializer(Object.class);
 
-    private Class<T> clazz;
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
+        mapper.activateDefaultTyping(LaissezFaireSubTypeValidator.instance, ObjectMapper.DefaultTyping.NON_FINAL, JsonTypeInfo.As.PROPERTY);
+        serializer.setObjectMapper(mapper);
 
-    static
-    {
-        ParserConfig.getGlobalInstance().setAutoTypeSupport(true);
-    }
+        // 使用StringRedisSerializer来序列化和反序列化redis的key值
+        template.setKeySerializer(new StringRedisSerializer());
+        template.setValueSerializer(serializer);
 
-    public FastJson2JsonRedisSerializer(Class<T> clazz)
-    {
-        super();
-        this.clazz = clazz;
-    }
+        // Hash的key也采用StringRedisSerializer的序列化方式
+        template.setHashKeySerializer(new StringRedisSerializer());
+        template.setHashValueSerializer(serializer);
 
-    @Override
-    public byte[] serialize(T t) throws SerializationException
-    {
-        if (t == null)
-        {
-            return new byte[0];
-        }
-        return JSON.toJSONString(t, SerializerFeature.WriteClassName).getBytes(DEFAULT_CHARSET);
-    }
-
-    @Override
-    public T deserialize(byte[] bytes) throws SerializationException
-    {
-        if (bytes == null || bytes.length <= 0)
-        {
-            return null;
-        }
-        String str = new String(bytes, DEFAULT_CHARSET);
-
-        return JSON.parseObject(str, clazz);
-    }
-
-    public void setObjectMapper(ObjectMapper objectMapper)
-    {
-        Assert.notNull(objectMapper, "'objectMapper' must not be null");
-        this.objectMapper = objectMapper;
-    }
-
-    protected JavaType getJavaType(Class<?> clazz)
-    {
-        return TypeFactory.defaultInstance().constructType(clazz);
+        template.afterPropertiesSet();
+        return template;
     }
 }
