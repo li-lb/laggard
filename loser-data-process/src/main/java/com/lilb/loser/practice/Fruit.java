@@ -1,4 +1,4 @@
-package com.lilb.loser.practica;
+package com.lilb.loser.practice;
 
 class Fruit{
         @Override
