@@ -1,7 +1,7 @@
 package com.lilb.loser.controller;
 
 
-import com.lilb.loser.entity.CommonResult;
+import com.lilb.loser.CommonResult;
 import com.lilb.loser.dao.intf.StudentDao;
 import com.lilb.loser.entity.StudentEntity;
 import org.springframework.beans.factory.annotation.Autowired;
