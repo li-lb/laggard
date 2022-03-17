@@ -67,16 +67,6 @@
             <artifactId>jackson-annotations</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>com.github.atool</groupId>
-            <artifactId>fluent-mybatis</artifactId>
-        </dependency>
-        <!-- 引入fluent-mybatis-processor, scope设置为provider 编译需要，运行时不需要 -->
-        <dependency>
-            <groupId>com.github.atool</groupId>
-            <artifactId>fluent-mybatis-processor</artifactId>
-            <scope>provided</scope>
-        </dependency>
 
     </dependencies>
 

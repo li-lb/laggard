@@ -1,24 +1,16 @@
 package com.lilb.loser.service;
 
-import com.lilb.loser.entity.UserEntity;
-
-import java.util.concurrent.CompletableFuture;
+import com.lilb.loser.entity.User;
+import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
- * 用户
+ * <p>
+ *  服务类
+ * </p>
  *
  * @author lilinbi
- * @date 2022/03/07
+ * @since 2022-03-17
  */
-public interface IUserService {
-
-    /**
-     * 获取用户
-     *
-     * @param id id
-     * @return {@link CompletableFuture}<{@link UserEntity}>
-     * @throws Exception 异常
-     */
-    CompletableFuture<UserEntity> get(Integer id) throws Exception;
+public interface IUserService extends IService<User> {
 
 }

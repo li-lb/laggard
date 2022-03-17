@@ -1,7 +1,5 @@
 package com.lilb.loser;
 
-import com.lilb.loser.entity.UserEntity;
-import com.lilb.loser.service.IUserService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.redisson.api.RLock;
@@ -18,8 +16,6 @@ class RedissonApplicationTests {
     @Autowired
     private RedissonClient redissonClient;
 
-    @Autowired
-    IUserService iUserService;
 
     @Test
     void run() throws Exception {
@@ -38,15 +34,6 @@ class RedissonApplicationTests {
             helloLock.unlock();
         }
         log.info("finished");
-    }
-
-    @Test
-    void test01() throws Exception {
-        CompletableFuture<UserEntity> future = iUserService.get(1);
-        future.whenCompleteAsync((v,e)->{
-            System.out.println("return value:"+v+"  exception:"+e);
-        });
-
     }
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {

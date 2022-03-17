@@ -9,6 +9,7 @@
         <module>loser-consumer</module>
         <module>loser-common</module>
         <module>loser-data-process</module>
+        <module>loser-flink</module>
     </modules>
 
     <parent>
@@ -32,6 +33,8 @@
         <spring-cloud-alibaba.version>2.2.7.RELEASE</spring-cloud-alibaba.version>
         <spring-cloud.version>Hoxton.SR12</spring-cloud.version>
         <skipTests>true</skipTests>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
     </properties>
 
     <dependencyManagement>
