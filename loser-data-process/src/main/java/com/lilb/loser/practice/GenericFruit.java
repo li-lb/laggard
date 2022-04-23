@@ -1,14 +1,6 @@
 package com.lilb.loser.practice;
 
 public class GenericFruit {
-
-
-
-
-
-
-
-
     public static void main(String[] args) {
         Apple apple = new Apple();
         Person person = new Person();
@@ -26,5 +18,6 @@ public class GenericFruit {
         //使用这两个方法也都可以成功
         generateTest.show_3(apple);
         generateTest.show_3(person);
+
     }
 }
