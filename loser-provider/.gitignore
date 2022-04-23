@@ -31,5 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
 /src/main/resources/bootstrap.yml
 /src/test/java/com/lilb/loser/MabatisPlusGeneratorTest.java
