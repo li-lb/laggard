@@ -33,7 +33,7 @@ public class CityRedisController {
     public Mono<City> saveCity(@RequestBody City city) {
         String key = "city_" + city.getId();
         ValueOperations<String, City> operations = redisTemplate.opsForValue();
-        operations.set(key, city, 60, TimeUnit.SECONDS);
+        operations.set(key, city, 6000, TimeUnit.SECONDS);
 
         return Mono.create(monoSink -> monoSink.success(city));
     }
