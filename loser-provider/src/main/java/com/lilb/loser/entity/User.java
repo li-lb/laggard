@@ -1,8 +1,6 @@
 package com.lilb.loser.entity;
 
 import java.io.Serializable;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 
 /**
  * <p>
@@ -12,21 +10,21 @@ import io.swagger.annotations.ApiModelProperty;
  * @author lilinbi
  * @since 2022-03-17
  */
-@ApiModel(value = "User对象", description = "")
+//@ApiModel(value = "User对象", description = "")
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @ApiModelProperty("主键ID")
+//    @ApiModelProperty("主键ID")
     private Long id;
 
-    @ApiModelProperty("姓名")
+//    @ApiModelProperty("姓名")
     private String name;
 
-    @ApiModelProperty("年龄")
+//    @ApiModelProperty("年龄")
     private Integer age;
 
-    @ApiModelProperty("邮箱")
+//    @ApiModelProperty("邮箱")
     private String email;
 
     public Long getId() {
