@@ -1,6 +1,5 @@
 package com.lilb.loser.controller;
 
-import com.lilb.loser.entity.User;
 import com.lilb.loser.service.IUserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,24 +7,13 @@ import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * <p>
- *  前端控制器
- * </p>
- *
- * @author lilinbi
- * @since 2022-03-17
- */
+
 /**
  * 用户控制器
- * <p>
- *  前端控制器
- * </p>
  *
  * @author li-lb
  * @date 2022/01/17
@@ -35,7 +23,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @Slf4j
 @CacheConfig(cacheNames = { "user" })
-@Controller
 @RequestMapping("/user")
 public class UserController {
 

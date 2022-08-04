@@ -1,7 +1,6 @@
 package com.lilb.loser.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.lilb.loser.entity.User;
 
 import java.util.concurrent.CompletableFuture;
 

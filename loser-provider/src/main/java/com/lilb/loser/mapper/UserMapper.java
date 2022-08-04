@@ -1,6 +1,5 @@
 package com.lilb.loser.mapper;
 
-import com.lilb.loser.entity.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
