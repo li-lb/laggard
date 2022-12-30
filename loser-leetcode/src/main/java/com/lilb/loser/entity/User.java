@@ -1,8 +1,6 @@
 package com.lilb.loser.entity;
 
 import lombok.Data;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Table;
 
 /**
  * 学生实体类
@@ -11,10 +9,8 @@ import org.springframework.data.relational.core.mapping.Table;
  * @date 2022/04/22
  */
 @Data
-@Table("user")
 public class User {
 
-    @Id
     private int id;
 
     /**

@@ -1,7 +1,6 @@
 package com.lilb.loser.entity;
 
 import lombok.Data;
-import org.springframework.data.annotation.Id;
 
 /**
  * 城市实体类
@@ -13,7 +12,6 @@ public class City {
     /**
      * 城市编号
      */
-    @Id
     private Long id;
 
     /**
