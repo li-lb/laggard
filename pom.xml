@@ -10,6 +10,7 @@
         <module>loser-common</module>
         <module>loser-flink</module>
         <module>loser-flux</module>
+        <module>loser-leetcode</module>
     </modules>
 
     <parent>
