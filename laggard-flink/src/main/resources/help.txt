@@ -2,3 +2,4 @@ cd /usr/local/Cellar/apache-flink/1.16.1/libexec/bin
 
 在bin目录下执行
 ./start-cluster.sh
+./stop-cluster.sh
