@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class laggardLeetcodeApplication {
+public class LeetcodeApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(laggardLeetcodeApplication.class, args);
+        SpringApplication.run(LeetcodeApplication.class, args);
     }
 
 }

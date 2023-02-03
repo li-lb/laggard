@@ -1,6 +1,7 @@
 package com.lilb.laggard.controller;
 
-import com.lilb.laggard.service.Hellaggardvice;
+
+import com.lilb.laggard.service.HelloService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,14 +15,14 @@ import reactor.core.publisher.Mono;
 public class HelloController {
 
     @Autowired
-    Hellaggardvice hellaggardvice;
+    HelloService helloService;
 
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public Mono<String> hello() {
         long start = System.currentTimeMillis();
         Mono<String> hello = Mono.fromSupplier(() -> {
             try {
-                return hellaggardvice.getHelloStr();
+                return helloService.getHelloStr();
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }

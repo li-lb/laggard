@@ -1,5 +1,5 @@
 package com.lilb.laggard.service;
 
-public interface Hellaggardvice {
+public interface HelloService {
     String getHelloStr() throws InterruptedException;
 }
