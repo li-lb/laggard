@@ -1,4 +1,4 @@
 # laggard
 
-见证下进步的过程
-loser->backward
+**见证下进步的过程**
+**loser->backward**
