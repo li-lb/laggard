@@ -5,12 +5,12 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>loser-provider</module>
-        <module>loser-consumer</module>
-        <module>loser-common</module>
-        <module>loser-flux</module>
-        <module>loser-flink</module>
-        <module>loser-leetcode</module>
+        <module>laggard-provider</module>
+        <module>laggard-consumer</module>
+        <module>laggard-common</module>
+        <module>laggard-flux</module>
+        <module>laggard-flink</module>
+        <module>laggard-leetcode</module>
     </modules>
 
     <parent>
@@ -21,10 +21,10 @@
     </parent>
 
     <groupId>com.lilb</groupId>
-    <artifactId>loser</artifactId>
+    <artifactId>laggard</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>loser</name>
-    <description>loser</description>
+    <name>laggard</name>
+    <description>laggard</description>
 
     <properties>
         <java.version>17</java.version>
