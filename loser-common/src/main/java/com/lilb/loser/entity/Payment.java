@@ -1,4 +1,4 @@
-package com.lilb.loser;
+package com.lilb.loser.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,7 +16,7 @@ import java.io.Serializable;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Payment implements Serializable{
+public class Payment implements Serializable {
     private Long id;
     private String serial;
 }

@@ -2,11 +2,11 @@ package com.lilb.loser.leetcode;
 
 public class Frog {
     public static int frog(int n) {
-        int []arr = new int[1000];
+        int[] arr = new int[1000];
         if (n <= 2) {
             return n;
         } else {
-            if(arr[n]==0){
+            if (arr[n] == 0) {
                 arr[n] = frog(n - 1) + frog(n - 2);
             }
             return arr[n];
@@ -14,7 +14,7 @@ public class Frog {
     }
 
     public static int frog2(int n) {
-        if(n <= 2)
+        if (n <= 2)
             return n;
 
         int f1 = 1;
@@ -30,7 +30,7 @@ public class Frog {
     }
 
     public static void main(String[] args) {
-        int n =30;
+        int n = 30;
         int frog = frog2(n);
         System.out.println(frog);
 

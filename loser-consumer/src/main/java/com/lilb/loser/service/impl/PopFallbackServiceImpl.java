@@ -1,6 +1,7 @@
 package com.lilb.loser.service.impl;
 
-import com.lilb.loser.CommonResult;
+
+import com.lilb.loser.entity.CommonResult;
 import com.lilb.loser.service.PopService;
 import org.springframework.stereotype.Component;
 
@@ -14,6 +15,6 @@ import org.springframework.stereotype.Component;
 public class PopFallbackServiceImpl implements PopService {
     @Override
     public CommonResult selectById(Integer id) {
-        return new CommonResult<>(44444,"服务降级返回,---PaymentFallbackService");
+        return new CommonResult<>(44444, "服务降级返回,---PaymentFallbackService");
     }
 }

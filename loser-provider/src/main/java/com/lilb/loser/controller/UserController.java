@@ -1,5 +1,6 @@
 package com.lilb.loser.controller;
 
+import com.lilb.loser.entity.User;
 import com.lilb.loser.service.IUserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,13 +17,13 @@ import org.springframework.web.bind.annotation.RestController;
  * 用户控制器
  *
  * @author li-lb
- * @date 2022/01/17
  * @author lilinbi
+ * @date 2022/01/17
  * @since 2022-03-17
  */
 @RestController
 @Slf4j
-@CacheConfig(cacheNames = { "user" })
+@CacheConfig(cacheNames = {"user"})
 @RequestMapping("/user")
 public class UserController {
 
@@ -36,8 +37,8 @@ public class UserController {
      * @param id
      * @return
      */
-    @RequestMapping(value = "/get" ,method = RequestMethod.GET)
-    @Cacheable(key="#id",unless="#result == null")
+    @RequestMapping(value = "/get", method = RequestMethod.GET)
+    @Cacheable(key = "#id", unless = "#result == null")
     public User get(String id) {
         log.info("如果没有缓存，就会调用下面方法，如果有缓存，则直接输出，不会输出此段话");
         return iUserService.getById(id);
@@ -49,7 +50,7 @@ public class UserController {
      * @param id
      * @return
      */
-    @RequestMapping(value = "/del" ,method = RequestMethod.GET)
+    @RequestMapping(value = "/del", method = RequestMethod.GET)
     @CacheEvict(key = "#id")
     public void del(String id) {
         iUserService.removeById(id);
@@ -62,7 +63,7 @@ public class UserController {
      * @param user
      * @return
      */
-    @RequestMapping(value = "/save" ,method = RequestMethod.POST)
+    @RequestMapping(value = "/save", method = RequestMethod.POST)
     @CachePut(key = "#result.id")
     public User save(User user) {
         iUserService.save(user);

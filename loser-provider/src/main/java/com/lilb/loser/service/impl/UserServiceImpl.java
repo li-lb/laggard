@@ -1,6 +1,7 @@
 package com.lilb.loser.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.lilb.loser.entity.User;
 import com.lilb.loser.mapper.UserMapper;
 import com.lilb.loser.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +12,7 @@ import java.util.concurrent.CompletableFuture;
 
 /**
  * <p>
- *  服务实现类
+ * 服务实现类
  * </p>
  *
  * @author lilinbi

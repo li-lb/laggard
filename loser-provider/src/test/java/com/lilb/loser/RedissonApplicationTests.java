@@ -16,26 +16,6 @@ class RedissonApplicationTests {
     @Autowired
     private RedissonClient redissonClient;
 
-
-    @Test
-    void run() throws Exception {
-        log.info("spring boot run");
-
-        //创建锁
-        RLock helloLock = redissonClient.getLock("hello");
-
-        //加锁
-        helloLock.lock();
-        try {
-            log.info("locked");
-            Thread.sleep(1000 * 10);
-        } finally {
-            //释放锁
-            helloLock.unlock();
-        }
-        log.info("finished");
-    }
-
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         ExecutorService executorService = Executors.newCachedThreadPool();
 
@@ -58,6 +38,25 @@ class RedissonApplicationTests {
         System.out.println(completableFuture.get());
         System.out.println(future.get());
         executorService.shutdown();
+    }
+
+    @Test
+    void run() throws Exception {
+        log.info("spring boot run");
+
+        //创建锁
+        RLock helloLock = redissonClient.getLock("hello");
+
+        //加锁
+        helloLock.lock();
+        try {
+            log.info("locked");
+            Thread.sleep(1000 * 10);
+        } finally {
+            //释放锁
+            helloLock.unlock();
+        }
+        log.info("finished");
     }
 
 }

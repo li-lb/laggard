@@ -4,7 +4,6 @@ import lombok.Data;
 
 /**
  * 城市实体类
- *
  */
 @Data
 public class City {

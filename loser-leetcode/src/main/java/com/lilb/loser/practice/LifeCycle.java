@@ -1,6 +1,8 @@
 package com.lilb.loser.practice;
 
 import com.lilb.loser.entity.User;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
@@ -8,8 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
 
 public class LifeCycle implements InitializingBean, ApplicationContextAware, DisposableBean {
 

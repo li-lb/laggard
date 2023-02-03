@@ -17,13 +17,13 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
-    @RequestMapping(value="/getAllUser",method = RequestMethod.GET)
+    @RequestMapping(value = "/getAllUser", method = RequestMethod.GET)
     public Flux<User> getAllUser() {
         Flux<User> userFlux = userRepository.findAll();
         return userFlux;
     }
 
-    @RequestMapping(value="/addUser",method = RequestMethod.POST)
+    @RequestMapping(value = "/addUser", method = RequestMethod.POST)
     public Mono<User> addUser(@RequestBody User user) {
         Mono<User> mono = userRepository.save(user);
         return mono;
@@ -32,6 +32,7 @@ public class UserController {
     /**
      * Flux : 返回0-n个元素
      * 注：需要指定MediaType
+     *
      * @return
      */
     @GetMapping(value = "/flux", produces = MediaType.TEXT_EVENT_STREAM_VALUE)

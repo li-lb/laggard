@@ -16,7 +16,7 @@ public class HelloController {
     @Autowired
     HelloService helloService;
 
-    @RequestMapping(value="/hello",method = RequestMethod.GET)
+    @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public Mono<String> hello() {
         long start = System.currentTimeMillis();
         Mono<String> hello = Mono.fromSupplier(() -> {
@@ -31,10 +31,9 @@ public class HelloController {
     }
 
 
-
-    @RequestMapping(value = "/flux",method = RequestMethod.GET,produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    @RequestMapping(value = "/flux", method = RequestMethod.GET, produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public Flux<String> flux() {
-        Flux<String> flux = Flux.fromArray(new String[]{"小黑","小胖","小六","一鑫"}).map(s -> {
+        Flux<String> flux = Flux.fromArray(new String[]{"小黑", "小胖", "小六", "一鑫"}).map(s -> {
             try {
                 Thread.sleep(2000);
             } catch (InterruptedException e) {

@@ -1,12 +1,13 @@
 package com.lilb.loser.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.lilb.loser.entity.User;
 
 import java.util.concurrent.CompletableFuture;
 
 /**
  * <p>
- *  服务类
+ * 服务类
  * </p>
  *
  * @author lilinbi

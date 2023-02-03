@@ -1,10 +1,12 @@
 package com.lilb.loser.mapper;
 
+
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.lilb.loser.entity.User;
 
 /**
  * <p>
- *  Mapper 接口
+ * Mapper 接口
  * </p>
  *
  * @author lilinbi

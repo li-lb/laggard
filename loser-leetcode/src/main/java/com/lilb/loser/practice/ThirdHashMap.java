@@ -1,42 +1,15 @@
 package com.lilb.loser.practice;
 
-public class ThirdHashMap<K,V> {
-
-    /**
-     * 节点类
-     *
-     * @param <K>
-     * @param <V>
-     */
-    class Node<K, V> {
-        //键值对
-        private K key;
-        private V value;
-
-        //链表，后继
-        private Node<K, V> next;
-
-        public Node(K key, V value) {
-            this.key = key;
-            this.value = value;
-        }
-
-        public Node(K key, V value,Node<K, V> next) {
-            this.key = key;
-            this.value = value;
-            this.next = next;
-        }
-    }
+public class ThirdHashMap<K, V> {
 
     //默认容量
     final int DEFAULT_CAPACITY = 16;
     //负载因子
     final float LOAD_FACTOR = 0.75f;
-    //HashMap的大小
-    private int size;
     //桶数组
     Node<K, V>[] buckets;
-
+    //HashMap的大小
+    private int size;
     /**
      * 无参构造器，设置桶数组默认容量
      */
@@ -84,7 +57,7 @@ public class ThirdHashMap<K,V> {
 
     /**
      * 将元素存入指定的node数组
-     *
+     * <p>
      * 获取元素插入位置
      * 当前位置为空，直接插入
      * 位置不为空，发生冲突，遍历链表
@@ -120,10 +93,9 @@ public class ThirdHashMap<K,V> {
         size++;
     }
 
-
     /**
      * 扩容
-     *
+     * <p>
      * 创建两倍容量的新数组
      * 将当前桶数组的元素重新散列到新的数组
      * 新数组置为map的桶数组
@@ -179,6 +151,32 @@ public class ThirdHashMap<K,V> {
             node = node.next;
         }
         return null;
+    }
+
+    /**
+     * 节点类
+     *
+     * @param <K>
+     * @param <V>
+     */
+    class Node<K, V> {
+        //键值对
+        private K key;
+        private V value;
+
+        //链表，后继
+        private Node<K, V> next;
+
+        public Node(K key, V value) {
+            this.key = key;
+            this.value = value;
+        }
+
+        public Node(K key, V value, Node<K, V> next) {
+            this.key = key;
+            this.value = value;
+            this.next = next;
+        }
     }
 
 }

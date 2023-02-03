@@ -1,6 +1,7 @@
 package com.lilb.loser.controller;
 
-import com.lilb.loser.CommonResult;
+
+import com.lilb.loser.entity.CommonResult;
 import com.lilb.loser.service.PopService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,7 +23,7 @@ public class PopController {
      * 列表
      */
     @RequestMapping("/consumer/selectById/{id}")
-    public CommonResult selectById(@PathVariable("id") Integer id){
+    public CommonResult selectById(@PathVariable("id") Integer id) {
         CommonResult commonResult = popService.selectById(id);
         return commonResult;
     }

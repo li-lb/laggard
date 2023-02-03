@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
 public class RedisUtil {
 
     @Autowired
-    RedisTemplate<String,Object> redisTemplate;
+    RedisTemplate<String, Object> redisTemplate;
 
     /**
      * 设置有效时间
@@ -43,10 +43,11 @@ public class RedisUtil {
      * @return true=设置成功；false=设置失败
      */
     public boolean expire(final String key, final long timeout, final TimeUnit unit) {
-        
+
         Boolean ret = redisTemplate.expire(key, timeout, unit);
         return ret != null && ret;
     }
+
     /**
      * 判断key是否存在
      *

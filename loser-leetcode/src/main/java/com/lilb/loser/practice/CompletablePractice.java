@@ -5,7 +5,7 @@ import java.util.concurrent.CompletableFuture;
 public class CompletablePractice {
 
     public static void main(String[] args) throws InterruptedException {
-        CompletableFuture<String> completableFuture = CompletableFuture.supplyAsync(()->{
+        CompletableFuture<String> completableFuture = CompletableFuture.supplyAsync(() -> {
             System.out.println("第一个");
             try {
                 Thread.sleep(100);
@@ -15,10 +15,10 @@ public class CompletablePractice {
             return "1";
         });
 
-        completableFuture.whenCompleteAsync((s,e)->{
+        completableFuture.whenCompleteAsync((s, e) -> {
 
             try {
-                System.out.println("completableFuture"+Thread.currentThread());
+                System.out.println("completableFuture" + Thread.currentThread());
                 Thread.sleep(100);
             } catch (InterruptedException ex) {
                 ex.printStackTrace();

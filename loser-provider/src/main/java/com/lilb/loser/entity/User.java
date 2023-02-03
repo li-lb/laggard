@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author lilinbi
@@ -15,16 +15,16 @@ public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-//    @ApiModelProperty("主键ID")
+    //    @ApiModelProperty("主键ID")
     private Long id;
 
-//    @ApiModelProperty("姓名")
+    //    @ApiModelProperty("姓名")
     private String name;
 
-//    @ApiModelProperty("年龄")
+    //    @ApiModelProperty("年龄")
     private Integer age;
 
-//    @ApiModelProperty("邮箱")
+    //    @ApiModelProperty("邮箱")
     private String email;
 
     public Long getId() {
@@ -34,6 +34,7 @@ public class User implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
+
     public String getName() {
         return name;
     }
@@ -41,6 +42,7 @@ public class User implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
+
     public Integer getAge() {
         return age;
     }
@@ -48,6 +50,7 @@ public class User implements Serializable {
     public void setAge(Integer age) {
         this.age = age;
     }
+
     public String getEmail() {
         return email;
     }
@@ -59,10 +62,10 @@ public class User implements Serializable {
     @Override
     public String toString() {
         return "User{" +
-            "id=" + id +
-            ", name=" + name +
-            ", age=" + age +
-            ", email=" + email +
-        "}";
+                "id=" + id +
+                ", name=" + name +
+                ", age=" + age +
+                ", email=" + email +
+                "}";
     }
 }

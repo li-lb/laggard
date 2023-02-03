@@ -10,7 +10,6 @@ public class JdkTest {
         System.out.println(size2);
 
 
-
         int i = 7;
         System.out.println(i | 1);
 

@@ -16,7 +16,7 @@ public class CityRedisController {
     @Autowired
     private RedisTemplate redisTemplate;
 
-    @RequestMapping(value = "/{id}",method = RequestMethod.GET)
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public Mono<City> findCityById(@PathVariable("id") Long id) {
         String key = "city_" + id;
         ValueOperations<String, City> operations = redisTemplate.opsForValue();
@@ -29,7 +29,7 @@ public class CityRedisController {
         return Mono.create(monoSink -> monoSink.success(city));
     }
 
-    @RequestMapping(value = "/save",method = RequestMethod.POST)
+    @RequestMapping(value = "/save", method = RequestMethod.POST)
     public Mono<City> saveCity(@RequestBody City city) {
         String key = "city_" + city.getId();
         ValueOperations<String, City> operations = redisTemplate.opsForValue();
@@ -38,7 +38,7 @@ public class CityRedisController {
         return Mono.create(monoSink -> monoSink.success(city));
     }
 
-    @RequestMapping(value = "/{id}",method = RequestMethod.DELETE)
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public Mono<Long> deleteCity(@PathVariable("id") Long id) {
         String key = "city_" + id;
         boolean hasKey = redisTemplate.hasKey(key);
