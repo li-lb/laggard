@@ -71,6 +71,7 @@ public class TriggerExample {
             ValueState<Boolean> isFirstEvent = triggerContext.getPartitionedState(
                     new ValueStateDescriptor<Boolean>("first-event", Types.BOOLEAN)
             );
+
             if (isFirstEvent.value() == null) {
                 for (long i = timeWindow.getStart(); i < timeWindow.getEnd(); i = i + 1000L) {
                     triggerContext.registerEventTimeTimer(i);
