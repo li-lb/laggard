@@ -12,6 +12,7 @@
         <module>laggard-flink</module>
         <module>laggard-leetcode</module>
         <module>laggard-future</module>
+        <module>laggard-dubbo</module>
     </modules>
 
     <parent>
@@ -86,6 +87,11 @@
                 <groupId>org.redisson</groupId>
                 <artifactId>redisson-spring-boot-starter</artifactId>
                 <version>3.16.7</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.30</version>
             </dependency>
 
         </dependencies>
