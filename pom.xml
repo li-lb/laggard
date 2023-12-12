@@ -11,12 +11,13 @@
         <module>laggard-flux</module>
         <module>laggard-flink</module>
         <module>laggard-leetcode</module>
+        <module>laggard-future</module>
     </modules>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.0.2</version>
+        <version>3.2.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
