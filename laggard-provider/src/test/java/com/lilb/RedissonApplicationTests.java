@@ -45,16 +45,20 @@ class RedissonApplicationTests {
         log.info("spring boot run");
 
         //创建锁
-        RLock helloLock = redissonClient.getLock("hello");
-
+        RLock lock = redissonClient.getLock("hello");
+        if (lock.tryLock()) {
+            return;
+        }
         //加锁
-        helloLock.lock();
+        lock.lock();
         try {
             log.info("locked");
             Thread.sleep(1000 * 10);
         } finally {
-            //释放锁
-            helloLock.unlock();
+            if (lock.isHeldByCurrentThread()) {
+                //释放锁
+                lock.unlock();
+            }
         }
         log.info("finished");
     }
