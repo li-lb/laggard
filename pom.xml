@@ -12,7 +12,6 @@
         <module>laggard-flink</module>
         <module>laggard-leetcode</module>
         <module>laggard-future</module>
-        <module>laggard-dubbo</module>
     </modules>
 
     <parent>
